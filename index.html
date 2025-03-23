@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Android Studio Code Display</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .code-container {
+            background: #272822;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+        h2 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h2> 1. BG color change</h2>
+    <div class="code-container">
+        <code>
+            public void bgred(View view) {
+                ConstraintLayout layout = findViewById(R.id.main);
+                layout.setBackgroundColor(Color.RED);
+            }
+        
+            public void bggreen(View view) {
+                ConstraintLayout layout = findViewById(R.id.main);
+                layout.setBackgroundColor(Color.GREEN);
+            }
+        </code>
+    </div>
+    <h2> 2.String.XML</h2>
+    <div class="code-container">
+        <code>
+            android:text="@string/bt"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/white"
+        </code>
+    </div>
+    <h2> 3.Alert box message</h2>
+    <div class="code-container">
+        <code>
+            Button button = findViewById(R.id.button);
+        button.setOnClickListener(view -> 
+            new AlertDialog.Builder(MainActivity.this)
+                .setTitle("Alert")
+                .setMessage("Button Clicked!")
+                .setPositiveButton("OK", null)
+                .show()
+        );
+        </code>
+    </div>
+    <h2> 4.Toast using button</h2>
+    <div class="code-container">
+        <code>
+            Button button =findViewById(R.id.button);
+            button.setOnClickListener(view ->
+                    Toast.makeText(MainActivity.this,"hello world",Toast.LENGTH_SHORT).show()
+                    );
+        </code>
+    </div>
+   
+    <h2> 6.display XML changes using buttons</h2>
+    <div class="code-container">
+        <code>
+            private TextView textViewResult;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        textViewResult = findViewById(R.id.textViewResult);
+    }
+
+    public void onCheckboxClicked(View view) {
+        CheckBox male = findViewById(R.id.check_male);
+        CheckBox female = findViewById(R.id.check_female);
+
+
+         if (male.isChecked()) {
+            textViewResult.setText("Selected: Male");
+        } else if (female.isChecked()) {
+            textViewResult.setText("Selected: Female");
+        } else {
+            textViewResult.setText("Please select an option!");
+        }
+    }
+}
+        </code>
+    </div>
+    <h2> 7.activity life cycle</h2>
+    <div class="code-container">
+        <code>
+            @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        showToast("onCreate Called");
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        showToast("onStart Called");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        showToast("onResume Called");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        showToast("onPause Called");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        showToast("onStop Called");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        showToast("onDestroy Called");
+    }
+
+    private void showToast(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+}
+        </code>
+    </div>
+    <h2>8.multiple activities</h2>
+    <div class="code-container">
+        <code>
+            public void openSecondActivity(View view) {
+                Intent intent = new Intent(this, MainActivity2.class);
+                startActivity(intent);
+            }
+            public void goBack(View view) {
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
+        </code>
+    </div>
+    <h2> 10.EB bill calculate</h2>
+    <div class="code-container">
+        <code>
+            public void calculateBill(View view) {
+                EditText unitsInput = findViewById(R.id.unitsInput);
+                TextView resultText = findViewById(R.id.resultText);
+        
+                int units = Integer.parseInt(unitsInput.getText().toString());
+                resultText.setText("Bill: ₹" + (units * 5));
+            }
+        </code>
+    </div>
+
+
+</body>
+</html>
