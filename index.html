@@ -4,32 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Visualization</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            padding: 20px;
-        }
-        .code-container {
-            background: #272822;
-            color: #f8f8f2;
-            padding: 15px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            overflow-x: auto;
-            white-space: pre-wrap;
-            font-family: monospace;
-        }
-        h2 {
-            color: #333;
-        }
-    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-gray-100 p-6">
+    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-6">
+        <h1 class="text-2xl font-bold text-gray-800 mb-6 text-center">Data Visualization Examples</h1>
 
-    <h2>1. Profit of all months (Line Plot)</h2>
-    <div class="code-container">
-        <code>
+        <h2 class="text-xl font-semibold text-gray-800 mb-4">1. Profit of all months (Line Plot)</h2>
+        <div class="bg-gray-900 text-green-300 p-4 rounded-md overflow-x-auto">
+            <pre class="whitespace-pre-wrap text-sm">
 import pandas as pd
 import matplotlib.pyplot as plt 
 
@@ -43,12 +26,12 @@ plt.xlabel('Months')
 plt.ylabel('Profit ($)') 
 plt.grid(True) 
 plt.show()
-        </code>
-    </div>
+            </pre>
+        </div>
 
-    <h2>2. Toothpaste sales data (Scatter Plot)</h2>
-    <div class="code-container">
-        <code>
+        <h2 class="text-xl font-semibold text-gray-800 mt-6 mb-4">2. Toothpaste sales data (Scatter Plot)</h2>
+        <div class="bg-gray-900 text-green-300 p-4 rounded-md overflow-x-auto">
+            <pre class="whitespace-pre-wrap text-sm">
 import pandas as pd
 import matplotlib.pyplot as plt 
 
@@ -62,12 +45,12 @@ plt.xlabel('Months')
 plt.ylabel('Sales (Units)') 
 plt.grid(True) 
 plt.show()
-        </code>
-    </div>
+            </pre>
+        </div>
 
-    <h2>3. Facewash and Facecream (Bar Chart)</h2>
-    <div class="code-container">
-        <code>
+        <h2 class="text-xl font-semibold text-gray-800 mt-6 mb-4">3. Facewash and Facecream (Bar Chart)</h2>
+        <div class="bg-gray-900 text-green-300 p-4 rounded-md overflow-x-auto">
+            <pre class="whitespace-pre-wrap text-sm">
 import pandas as pd
 import matplotlib.pyplot as plt 
 
@@ -77,12 +60,12 @@ plt.title('Total Sales')
 plt.xlabel('Products')
 plt.ylabel('Units Sold')
 plt.show()
-        </code>
-    </div>
+            </pre>
+        </div>
 
-    <h2>4. Profit of each month (Histogram)</h2>
-    <div class="code-container">
-        <code>
+        <h2 class="text-xl font-semibold text-gray-800 mt-6 mb-4">4. Profit of each month (Histogram)</h2>
+        <div class="bg-gray-900 text-green-300 p-4 rounded-md overflow-x-auto">
+            <pre class="whitespace-pre-wrap text-sm">
 import pandas as pd
 import matplotlib.pyplot as plt  
 
@@ -92,12 +75,12 @@ plt.title('Distribution of Monthly Profits')
 plt.xlabel('Profit Range ($)')  
 plt.ylabel('Frequency')  
 plt.show()
-        </code>
-    </div>
+            </pre>
+        </div>
 
-    <h2>5. Sales distribution (Pie Chart)</h2>
-    <div class="code-container">
-        <code>
+        <h2 class="text-xl font-semibold text-gray-800 mt-6 mb-4">5. Sales distribution (Pie Chart)</h2>
+        <div class="bg-gray-900 text-green-300 p-4 rounded-md overflow-x-auto">
+            <pre class="whitespace-pre-wrap text-sm">
 import pandas as pd
 import matplotlib.pyplot as plt  
 
@@ -111,10 +94,15 @@ sales_data = [df['facecream'].sum(), df['facewash'].sum(), df['toothpaste'].sum(
 plt.pie(sales_data, labels=products, autopct='%1.1f%%', startangle=140,  
         colors=['lightblue', 'lightgreen', 'lightcoral', 'lightyellow'])  
 plt.title('Total Sales for Each Product (Last Year)')  
-
 plt.show()
-        </code>
-    </div>
+            </pre>
+        </div>
 
+        <h2 class="text-xl font-semibold text-gray-800 mt-6 mb-4">Download Data Files</h2>
+        <div class="flex space-x-4">
+            <a href="\csvfile.csv" download class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">CSv file</a>
+            <a href="\excelfile.xlsx" download class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600">Excel file</a>
+        </div>
+    </div>
 </body>
 </html>
