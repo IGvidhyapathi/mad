@@ -83,14 +83,9 @@ plt.show()
             <pre class="whitespace-pre-wrap text-sm">
 import pandas as pd
 import matplotlib.pyplot as plt  
-
 df = pd.read_csv("CSV here")  
-
-# Extract product names and their total sales
 products = ['Face Cream', 'Face Wash', 'Toothpaste', 'Bathing Soap']
 sales_data = [df['facecream'].sum(), df['facewash'].sum(), df['toothpaste'].sum(), df['bathingsoap'].sum()]  
-
-# Create the pie chart
 plt.pie(sales_data, labels=products, autopct='%1.1f%%', startangle=140,  
         colors=['lightblue', 'lightgreen', 'lightcoral', 'lightyellow'])  
 plt.title('Total Sales for Each Product (Last Year)')  
